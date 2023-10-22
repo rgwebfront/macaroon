@@ -5,6 +5,180 @@
 }
 
 @font-face {
-  font-family: ;
-  src: url();
+  font-family: Gilroy-Bold;
+  src: url(../fonts/Gilroy-Bold.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-ExtraBold;
+  src: url(../fonts/Gilroy-Extrabold.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-Medium;
+  src: url(../fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+  font-family: Gilroy-Regular;
+  src: url(../fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+  font-family: tavolga-free;
+  src: url(../fonts/tavolga-free.ttf);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #eba8b1;
+  font-family: tavolga-free, sans-serif;
+}
+
+.header {
+  padding: 38px 15px 25px 15px;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu {}
+
+.menu-items {
+  list-style: none;
+  display: flex;
+  gap: 39px;
+}
+
+.menu-link {
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Gilroy-Medium, sans-serif;
+  color: rgb(119, 11, 29);
+  border-bottom: 1px solid transparent;
+}
+
+.menu-link:hover {
+  border-bottom: 1px solid #821328;
+}
+
+.order-number {
+  font-size: 16px;
+  font-family: Gilroy-Bold, sans-serif;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.main {
+  margin: 126px 0 105px 0;
+}
+
+.main__container {
+  display: flex;
+  gap: 14px;
+}
+
+.main-info {
+  max-width: 580px;
+}
+
+.description-title {
+  margin-top: 16px;
+  font-size: 55px;
+  color: rgb(255, 255, 255);
+  line-height: 1.091;
+}
+
+.description-text {
+  margin-top: 60px;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  line-height: 1.389;
+  max-width: 345px;
+}
+
+.main-action {
+  margin-top: 85px;
+}
+
+.button {
+  font-family: Gilroy-Bold, sans-serif;
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(0deg, #71081d 0%, #d7475c 100%);
+  outline: none;
+  border: 0;
+  text-align: center;
+}
+
+.button__main {
+  border-radius: 30px;
+  font-size: 18px;
+  width: 240px;
+  height: 60px;
+}
+
+.button__main:hover {
+  box-shadow: 0px 5px 9px 1px rgba(130, 19, 40, 0.5);
+}
+
+.main-image {
+  position: relative;
+
+}
+
+.main-image::before,
+.main-image::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  aspect-ratio: 1/1;
+  border: 1px solid #b85460;
+  border-radius: 50%;
+  z-index: -1;
+
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  animation: pulse 3s infinite;
+
+}
+
+.main-image::before {
+  animation-delay: 0s;
+}
+
+.main-image::after {
+  animation-delay: 0.5s;
+}
+
+:root {
+  --scale-size: 2;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+
+    border-width: 1px;
+  }
+
+  to {
+    transform: scale(var(--scale-size));
+    opacity: 0;
+    border-width: calc(1px / var(--scale-size));
+  }
 }
