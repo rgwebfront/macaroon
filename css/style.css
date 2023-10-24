@@ -40,12 +40,13 @@ body {
 }
 
 .header {
-  padding: 38px 15px 25px 15px;
+  padding: 38px 0 25px;
 }
 
 .container {
   max-width: 1170px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .header__container {
@@ -93,14 +94,14 @@ body {
   max-width: 580px;
 }
 
-.main-title {
+.main-info-title {
   margin-top: 16px;
   font-size: 55px;
   color: rgb(255, 255, 255);
   line-height: 1.091;
 }
 
-.main-text {
+.main-info-text {
   margin-top: 60px;
   font-size: 18px;
   color: rgb(255, 255, 255);
@@ -108,7 +109,7 @@ body {
   max-width: 345px;
 }
 
-.main-action {
+.main-info-action {
   margin-top: 85px;
 }
 
@@ -120,6 +121,7 @@ body {
   border: 0;
   text-align: center;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .button__main {
@@ -133,7 +135,7 @@ body {
   box-shadow: 0px 5px 9px 1px rgba(130, 19, 40, 0.5);
 }
 
-.main-image {
+.main-info-image {
   position: relative;
 }
 
@@ -179,21 +181,21 @@ body {
 .advantages__container {}
 
 
-.advantage-info {
+.advantages-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 151px;
+  grid-column-gap: 145px;
   margin-bottom: 88px;
 }
 
-.advantage-title {
+.advantages-title {
   font-size: 45px;
   color: rgb(51, 25, 7);
   line-height: 1.222;
   margin-bottom: 59px;
 }
 
-.advantage-text {
+.advantages-text {
   font-size: 18px;
   font-family: Gilroy-Regular, sans-serif;
   color: rgb(51, 25, 7);
@@ -201,7 +203,7 @@ body {
   max-width: 397px;
 }
 
-.advantage-image {
+.advantages-image {
   grid-column: 2 / 3;
   grid-row: 1 /3;
   align-self: self-end;
@@ -210,19 +212,20 @@ body {
 .advantages-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: 99px;
+  column-gap: 88px;
 }
 
-.advantages-circle {
+.advantage-circle {
   width: 70px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: #821328;
   position: relative;
   margin-bottom: 13px;
+  transition: 0.3s;
 }
 
-.advantages-number {
+.advantage-number {
   position: absolute;
   width: 100%;
   text-align: center;
@@ -230,16 +233,25 @@ body {
   font-size: 60px;
   font-family: Gilroy-ExtraBold, sans-serif;
   color: rgb(255, 255, 255);
+  transition: 0.3s;
 }
 
-.advantages-title {
+.advantage-lists:hover .advantage-circle {
+  background-color: #eba8b1;
+}
+
+.advantage-lists:hover .advantage-number {
+  color: #821328;
+}
+
+.advantage-title {
   font-size: 20px;
   font-family: Gilroy-ExtraBold, sans-serif;
   color: rgb(51, 25, 7);
   margin-bottom: 19px;
 }
 
-.advantages-text {
+.advantage-text {
   max-width: 219px;
   font-size: 15px;
   font-family: Gilroy-Medium, sans-serif;
