@@ -74,11 +74,10 @@ body {
   border-bottom: 1px solid #821328;
 }
 
-.order-number {
+.contacts-number {
   font-size: 16px;
   font-family: Gilroy-Bold, sans-serif;
   color: rgb(255, 255, 255);
-  text-decoration: none;
 }
 
 .main {
@@ -340,8 +339,6 @@ body {
   transform: scale(1.1);
 }
 
-
-
 .order {
   padding: 96px 0 120px 0;
   background-color: #ffefef
@@ -354,10 +351,12 @@ body {
 
 .order-image {
   margin-top: 72px;
+  position: relative;
 }
 
 .order-form {
   max-width: 465px;
+
 }
 
 .order-title {
@@ -405,7 +404,6 @@ body {
   margin-bottom: 25px;
 }
 
-
 .order-data-form {
   font-size: 18px;
   font-family: Gilroy-Bold, sans-serif;
@@ -413,10 +411,9 @@ body {
   margin-bottom: 20px;
 }
 
-.order-data-form-input-name {
-  margin-bottom: ;
+.order-data-form-input-number {
+  position: relative;
 }
-
 
 .button_order {
   width: 294px;
@@ -427,5 +424,106 @@ body {
 
 .button_order:hover {
   box-shadow: 0px 5px 9px 1px rgba(130, 19, 40, 0.5);
+}
+
+.strawberry_1 {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  animation: moving 3s infinite;
+}
+
+.strawberry_2 {
+  position: absolute;
+  right: 0;
+  animation: moving 3s infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes moving {
+  from {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.footer {
+  background-color: #c0707c;
+
+  position: relative;
+}
+
+.container__footer {
+  padding: 73px 0px 62px 0px;
+  background-color: #c0707c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo-img {
+  margin-bottom: 19px;
+}
+
+.footer-rights {
+  font-size: 12px;
+  font-family: Gilroy-Regular, sans-serif;
+  color: rgb(227, 172, 180);
+}
+
+.footer-instagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-instagram-img {
+  margin-bottom: 14px;
+  justify-content: center;
+
+}
+
+.footer .footer-inst-text {
+  font-size: 16px;
+  font-family: Gilroy-Bold, sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.footer-present {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.present-circle {
+  width: 90px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-image: radial-gradient(circle at center, #71081d 0%, #d7475c 100%);
+  transition: 0.3s;
+  position: relative;
+}
+
+.present-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.present-circle:hover {
+  box-shadow: 0px 0px 12.6px 2.4px rgba(130, 19, 40, 0.5);
+}
+
+.present-text {
+  position: absolute;
 
 }
