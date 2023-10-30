@@ -29,7 +29,6 @@
   src: url(../fonts/tavolga-free.ttf);
 }
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -175,9 +174,6 @@ body {
   padding: 120px 0 128px 0;
   background-color: #ffefef;
 }
-
-.advantages__container {}
-
 
 .advantages-info {
   display: grid;
@@ -456,7 +452,6 @@ body {
 
 .footer {
   background-color: #c0707c;
-
   position: relative;
 }
 
@@ -488,7 +483,6 @@ body {
 .footer-instagram-img {
   margin-bottom: 14px;
   justify-content: center;
-
 }
 
 .footer .footer-inst-text {
@@ -504,26 +498,127 @@ body {
 }
 
 .present-circle {
+  position: fixed;
+  right: 48px;
+  bottom: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.present-circle::before {
+  content: " ";
+  position: absolute;
   width: 90px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-image: radial-gradient(circle at center, #71081d 0%, #d7475c 100%);
   transition: 0.3s;
-  position: relative;
+  z-index: -1;
 }
 
-.present-img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.present-circle:hover {
+.present-circle:hover::before {
   box-shadow: 0px 0px 12.6px 2.4px rgba(130, 19, 40, 0.5);
 }
 
-.present-text {
-  position: absolute;
+.present-text-border {
+  position: fixed;
+  font-size: 15px;
+  font-family: Gilroy-Medium, sans-serif;
+  color: rgb(119, 10, 29);
+  line-height: 1.333;
+  border: 2px solid rgb(119, 10, 29);
+  border-radius: 10px;
+  background-color: rgb(254, 239, 238);
+  width: 172px;
+  height: 64px;
+  bottom: -40px;
+  right: 140px;
+  opacity: 0;
+  animation: slide-out 0.5s forwards;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 0px 11px;
+}
 
+.border-triangle,
+.background-triangle {
+  position: fixed;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transform: rotate(90deg);
+  animation: triangle-out 0.5s forwards;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  bottom: -71px;
+}
+
+.border-triangle {
+  border-bottom: 8px solid rgb(119, 10, 29);
+  right: 128px;
+}
+
+.background-triangle {
+  border-bottom: 8px solid rgb(254, 239, 238);
+  right: 131px;
+}
+
+.present-circle:hover+.present-text-border {
+  animation: slide-in 0.5s forwards;
+}
+
+.present-circle:hover+.present-text-border .border-triangle,
+.present-circle:hover+.present-text-border .background-triangle {
+  animation: triangle-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+  from {
+    bottom: -40px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 40px;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    bottom: 40px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: -40px;
+    opacity: 0;
+  }
+}
+
+@keyframes triangle-in {
+  from {
+    bottom: -10px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 71px;
+    opacity: 1;
+  }
+}
+
+@keyframes triangle-out {
+  from {
+    bottom: 71px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: -10px;
+    opacity: 0;
+  }
 }
