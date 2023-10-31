@@ -285,7 +285,6 @@ body {
   top: -59px;
   left: calc(50% - 96px);
   transition: 0.3s;
-
 }
 
 .product-order {
@@ -337,7 +336,7 @@ body {
 
 .order {
   padding: 96px 0 120px 0;
-  background-color: #ffefef
+  background-color: #ffefef;
 }
 
 .order__container {
@@ -352,7 +351,6 @@ body {
 
 .order-form {
   max-width: 465px;
-
 }
 
 .order-title {
@@ -492,133 +490,95 @@ body {
 }
 
 .footer-present {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-}
-
-.present-circle {
   position: fixed;
+  /* Возможно тут нужно размеры подогнать */
   right: 48px;
   bottom: 48px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row-reverse;
+
   cursor: pointer;
 }
 
-.present-circle::before {
-  content: " ";
-  position: absolute;
+.present-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 90px;
   aspect-ratio: 1/1;
+  /* :before для рисования круга излишен, по сути это просто background */
+  background: radial-gradient(circle at center, #71081d 0%, #d7475c 100%);
   border-radius: 50%;
-  background-image: radial-gradient(circle at center, #71081d 0%, #d7475c 100%);
-  transition: 0.3s;
-  z-index: -1;
+
+  box-shadow: none;
+  transition: box-shadow 0.3s;
+
+  cursor: pointer;
 }
 
-.present-circle:hover::before {
+.present-circle:hover {
   box-shadow: 0px 0px 12.6px 2.4px rgba(130, 19, 40, 0.5);
 }
 
+/* Этот рут лучше наверх поднять, здесь для демонстарции чтобы далеко не ходить */
+/* Можно не юзать если нет желания, но если что тебе цвета в одном месте придется только поменять */
+:root {
+  --special-offer-border: 2px solid rgb(119, 10, 29);
+  --special-offer-bg-color: rgb(254, 239, 238);
+}
+
 .present-text-border {
-  position: fixed;
-  font-size: 15px;
-  font-family: Gilroy-Medium, sans-serif;
-  color: rgb(119, 10, 29);
-  line-height: 1.333;
-  border: 2px solid rgb(119, 10, 29);
-  border-radius: 10px;
-  background-color: rgb(254, 239, 238);
-  width: 172px;
-  height: 64px;
-  bottom: -40px;
-  right: 140px;
-  opacity: 0;
-  animation: slide-out 0.5s forwards;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+
+  width: 172px;
+  height: 64px;
+
+  font-size: 15px;
+  font-family: Gilroy-Medium, sans-serif;
+  line-height: 1.333;
+
+  border: var(--special-offer-border);
+  border-radius: 10px;
+
+  background-color: var(--special-offer-bg-color);
+  color: rgb(119, 10, 29);
+
   padding: 0px 11px;
+  /* нужно по макету выставить тут */
+  margin-right: 10px;
+
+  transform: translateY(200px);
+  opacity: 0;
+  /* Анимацию можно написать проще через transition в данном случае */
+  transition: opacity 1s, transform 0.5s;
 }
 
-.border-triangle,
-.background-triangle {
-  position: fixed;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  transform: rotate(90deg);
-  animation: triangle-out 0.5s forwards;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  bottom: -71px;
+.present-circle:hover + .present-text-border {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .border-triangle {
-  border-bottom: 8px solid rgb(119, 10, 29);
-  right: 128px;
-}
+  /* треугольник это повернутый квадрат на 45 градусов у которого только две bordera покаршены */
+  position: absolute;
+  /* 6 px получилось так - половина ширины width + половина ширина border (5 + 1) */
+  right: -6px;
+  /* Выравниваем ровно по середине по вертикали, вне зависимости от размеров */
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
 
-.background-triangle {
-  border-bottom: 8px solid rgb(254, 239, 238);
-  right: 131px;
-}
+  /* Тут нужно размеры выставить по макету */
+  width: 10px;
+  height: 10px;
 
-.present-circle:hover+.present-text-border {
-  animation: slide-in 0.5s forwards;
-}
-
-.present-circle:hover+.present-text-border .border-triangle,
-.present-circle:hover+.present-text-border .background-triangle {
-  animation: triangle-in 0.5s forwards;
-}
-
-@keyframes slide-in {
-  from {
-    bottom: -40px;
-    opacity: 0;
-  }
-
-  to {
-    bottom: 40px;
-    opacity: 1;
-  }
-}
-
-@keyframes slide-out {
-  from {
-    bottom: 40px;
-    opacity: 1;
-  }
-
-  to {
-    bottom: -40px;
-    opacity: 0;
-  }
-}
-
-@keyframes triangle-in {
-  from {
-    bottom: -10px;
-    opacity: 0;
-  }
-
-  to {
-    bottom: 71px;
-    opacity: 1;
-  }
-}
-
-@keyframes triangle-out {
-  from {
-    bottom: 71px;
-    opacity: 1;
-  }
-
-  to {
-    bottom: -10px;
-    opacity: 0;
-  }
+  border: var(--special-offer-border);
+  border-left: transparent;
+  border-bottom: transparent;
+  background-color: var(--special-offer-bg-color);
 }
