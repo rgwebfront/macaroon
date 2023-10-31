@@ -451,10 +451,11 @@ body {
 .footer {
   background-color: #c0707c;
   position: relative;
+  padding: 73px 0px 62px;
 }
 
 .container__footer {
-  padding: 73px 0px 62px 0px;
+  padding: 0px 15px;
   background-color: #c0707c;
   display: flex;
   justify-content: space-between;
@@ -489,94 +490,71 @@ body {
   color: rgb(255, 255, 255);
 }
 
-.footer-present {
+.special-offer {
   position: fixed;
-  /* Возможно тут нужно размеры подогнать */
   right: 48px;
   bottom: 48px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row-reverse;
-
   cursor: pointer;
 }
 
-.present-circle {
+.offer-circle {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 90px;
   aspect-ratio: 1/1;
-  /* :before для рисования круга излишен, по сути это просто background */
   background: radial-gradient(circle at center, #71081d 0%, #d7475c 100%);
   border-radius: 50%;
-
   box-shadow: none;
   transition: box-shadow 0.3s;
-
   cursor: pointer;
 }
 
-.present-circle:hover {
+.offer-circle:hover {
   box-shadow: 0px 0px 12.6px 2.4px rgba(130, 19, 40, 0.5);
 }
 
-/* Этот рут лучше наверх поднять, здесь для демонстарции чтобы далеко не ходить */
-/* Можно не юзать если нет желания, но если что тебе цвета в одном месте придется только поменять */
 :root {
   --special-offer-border: 2px solid rgb(119, 10, 29);
   --special-offer-bg-color: rgb(254, 239, 238);
 }
 
-.present-text-border {
+.offer-text-border {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-
   width: 172px;
   height: 64px;
-
   font-size: 15px;
   font-family: Gilroy-Medium, sans-serif;
   line-height: 1.333;
-
   border: var(--special-offer-border);
   border-radius: 10px;
-
   background-color: var(--special-offer-bg-color);
   color: rgb(119, 10, 29);
-
   padding: 0px 11px;
-  /* нужно по макету выставить тут */
-  margin-right: 10px;
-
+  margin-right: 20px;
   transform: translateY(200px);
   opacity: 0;
-  /* Анимацию можно написать проще через transition в данном случае */
   transition: opacity 1s, transform 0.5s;
 }
 
-.present-circle:hover + .present-text-border {
+.offer-circle:hover+.offer-text-border {
   transform: translateY(0px);
   opacity: 1;
 }
 
 .border-triangle {
-  /* треугольник это повернутый квадрат на 45 градусов у которого только две bordera покаршены */
   position: absolute;
-  /* 6 px получилось так - половина ширины width + половина ширина border (5 + 1) */
-  right: -6px;
-  /* Выравниваем ровно по середине по вертикали, вне зависимости от размеров */
+  right: -7px;
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
-
-  /* Тут нужно размеры выставить по макету */
-  width: 10px;
-  height: 10px;
-
+  width: 11px;
+  height: 11px;
   border: var(--special-offer-border);
   border-left: transparent;
   border-bottom: transparent;
