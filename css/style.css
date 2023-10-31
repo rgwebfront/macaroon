@@ -540,7 +540,7 @@ body {
   margin-right: 20px;
   transform: translateY(200px);
   opacity: 0;
-  transition: opacity 1s, transform 0.5s;
+  transition: opacity 2s, transform 1s;
 }
 
 .offer-circle:hover+.offer-text-border {
