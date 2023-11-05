@@ -12,24 +12,27 @@
 <body>
   <header class="header">
     <div class="container header__container">
-      <div class="logo">
+      <div onclick="document.location='#advantages'" class="logo">
         <img src="images/logo/macaroons.png" alt="logo">
       </div>
       <nav class="menu">
         <ul class="menu-items">
           <li class="menu-item">
-            <a href="#" class="menu-link">Пироженки</a>
+            <a href="#products" class="menu-link">Пироженки</a>
           </li>
           <li class="menu-item">
-            <a href="#" class="menu-link">О нас</a>
+            <a href="#advantages" class="menu-link">О нас</a>
           </li>
           <li class="menu-item">
-            <a href="#" class="menu-link">Оформить заказ</a>
+            <a href="#order" class="menu-link">Оформить заказ</a>
           </li>
         </ul>
       </nav>
-      <div class="contacts-number header-contacts-number">
+      <div onclick="document.location='#order'" class="contacts-number header-contacts-number">
         +375 (29) 368-98-68
+      </div>
+      <div class="menu-button-line">
+        <img src="images/menu_icon/menu_line.png" alt="menu-button">
       </div>
     </div>
     </div>
@@ -45,18 +48,18 @@
           Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroon!
         </div>
         <div class="main-info-action">
-          <button class="button button__main">Выбрать макарун</button>
+          <button onclick="document.location='#products'" class="button button__main">Выбрать макарун</button>
         </div>
       </div>
-      <div class="main-info-image">
-        <img src="images/macaroon/main_macaroon.png" alt="macaroon">
+      <div onclick="document.location='#order'" class="main-info-image">
+        <img src="images/macaroon/main_macaroon.png" alt="macaroon" class="main-info-img">
         <div class="pulse1"></div>
         <div class="pulse2"></div>
       </div>
     </div>
     </div>
   </section>
-  <section class="advantages">
+  <section class="advantages" id="advantages">
     <div class="container advantages__container">
       <div class="advantages-info">
         <div class="advantages-title">
@@ -132,7 +135,7 @@
   </section>
   <section class="products">
     <div class="container products__container">
-      <div class="products-title">
+      <div class="products-title" id="products">
         Выберите свой макарун
       </div>
       <div class="products-lists">
@@ -148,7 +151,7 @@
             <p class="product-price">1,70 руб.</p>
           </div>
           <div class="product-action">
-            <button class="button button__product">Заказать</button>
+            <button onclick="document.location='#order'" class="button button__product">Заказать</button>
           </div>
         </div>
       </div>
@@ -165,7 +168,7 @@
             <p class="product-price">1,70 руб.</p>
           </div>
           <div class="product-action">
-            <button class="button button__product">Заказать</button>
+            <button onclick="document.location='#order'" class="button button__product">Заказать</button>
           </div>
         </div>
       </div>
@@ -182,7 +185,7 @@
             <p class="product-price">1,70 руб.</p>
           </div>
           <div class="product-action">
-            <button class="button button__product">Заказать</button>
+            <button onclick="document.location='#order'" class="button button__product">Заказать</button>
           </div>
         </div>
       </div>
@@ -199,13 +202,13 @@
             <p class="product-price">1,70 руб.</p>
           </div>
           <div class="product-action">
-            <button class="button button__product">Заказать</button>
+            <button onclick="document.location='#order'" class="button button__product">Заказать</button>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="order">
+  <section class="order" id="order">
     <div class="container order__container">
       <div class="order-image">
         <img src="images/macaroon/order_macaron.png" alt="macaroon-order" class="order-img">
@@ -239,6 +242,8 @@
         <div class="footer-rights">Все права защищены, 2023
         </div>
       </div>
+      <div class="footer-rights-mobile">Все права защищены, 2023
+      </div>
       <div class="footer-instagram">
         <img src="images/logo/instagram_logo.png" alt="instagram" class="footer-instagram-img">
         <div class="footer-inst-text">Мы в Instagram
@@ -248,7 +253,7 @@
         +375 (29) 368-98-68
       </div>
     </div>
-    <div class="special-offer">
+    <div onclick="document.location='#order'" class="special-offer">
       <div class="offer-circle">
         <img src="images/logo/present.png" alt="present" class="offer-img">
       </div>
