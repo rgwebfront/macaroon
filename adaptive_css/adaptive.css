@@ -11,6 +11,18 @@
   }
 }
 
+@media screen and (min-width: 1161px) and (max-width: 1278px) {
+  .main-info {
+    max-width: 520px;
+  }
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1161px) {
+  .main-info {
+    max-width: 380px;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   .header-contacts-number {
     display: none;
@@ -183,9 +195,7 @@
   }
 }
 
-
 @media screen and (max-width: 767px) {
-
   .header__container {
     justify-content: space-between;
   }
@@ -430,6 +440,10 @@
 }
 
 @media screen and (max-width: 374px) {
+  .advantages-img {
+    max-width: 270px;
+  }
+
   .input {
     width: 280px;
   }

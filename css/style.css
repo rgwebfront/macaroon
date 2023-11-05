@@ -274,6 +274,7 @@ body {
   border: 2px solid #ffefef;
   border-radius: 20px;
   padding: 109px 21px 28px 21px;
+  z-index: 3;
 }
 
 .products-title {
