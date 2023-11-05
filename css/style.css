@@ -77,6 +77,7 @@ body {
   font-size: 16px;
   font-family: Gilroy-Bold, sans-serif;
   color: rgb(255, 255, 255);
+  z-index: 3;
 }
 
 .main {
@@ -127,6 +128,8 @@ body {
   font-size: 18px;
   width: 240px;
   height: 60px;
+  z-index: 3;
+  position: relative;
 }
 
 .button__main:hover {
@@ -135,6 +138,7 @@ body {
 
 .main-info-image {
   position: relative;
+  z-index: 1;
 }
 
 .pulse1,
@@ -423,7 +427,7 @@ body {
 
 .strawberry_1 {
   position: absolute;
-  left: -30px;
+  left: 0;
   top: 0;
   animation: moving 3s infinite;
 }
@@ -500,6 +504,7 @@ body {
   align-items: center;
   flex-direction: row-reverse;
   cursor: pointer;
+  z-index: 2;
 }
 
 .offer-circle {
